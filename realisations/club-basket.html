@@ -1,0 +1,540 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Plateforme de club de basket | Prométhée Consulting</title>
+<meta name="description" content="Plateforme de gestion d'un club de basket-ball : adhérents, matchs, billetterie, boutique. Remplissage des matchs de 38 % à 70 %.">
+<meta property="og:title" content="Plateforme de club de basket | Prométhée Consulting">
+<meta property="og:description" content="Plateforme de gestion d'un club de basket-ball : adhérents, matchs, billetterie, boutique. Remplissage des matchs de 38 % à 70 %.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://prometheus-conseil.com/img/restitution.jpg">
+<link rel="canonical" href="https://prometheus-conseil.com/realisations/club-basket.html">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 150 205'%3E%3Cpath d='M72,8C75,36 63,58 43,83C23,108 15,132 25,157C26,130 40,112 57,90C77,64 86,39 72,8Z' fill='%230B2447'/%3E%3Cpath d='M90,22C109,56 108,75 87,102C67,128 59,148 62,169C42,152 44,131 57,109C77,79 96,61 90,22Z' fill='%238E70E5'/%3E%3Cpath d='M117,104C139,139 136,169 115,189C102,202 81,199 74,187C60,161 81,136 100,119C107,113 111,108 117,104Z' fill='%230B2447'/%3E%3Ccircle cx='117' cy='95' r='10' fill='%238E70E5'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Lato:wght@400;700;900&display=swap">
+<style>body{margin:0}[hidden]{display:none!important}
+/* Récit en chapitres plein écran, alternance bleu profond / blanc chaud, typographie Garamond monumentale. Un seul fil : la flamme qui éclaire. Charte V1.0 : pas de dégradé, pas d'ombre. */
+:root{
+  --bleu:#0B2447; --profond:#061B38; --lavande:#8E70E5; --lav-txt:#6E52C9; --lav-clair:#B9A6F0;
+  --ivoire:#EEE8DD; --blanc:#FAF8F4; --action:#3549B3; --encre:#202C3D; --encre-2:#4A5568; --filet:#DCD6CB;
+  --dim:rgba(238,232,221,.28);
+  --serif:'EB Garamond', Georgia, 'Times New Roman', serif;
+  --sans:'Lato', 'Helvetica Neue', Arial, sans-serif;
+  --w:1180px;
+  color-scheme: light;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--profond);color:var(--ivoire);font-family:var(--sans);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:40;background:var(--profond)}
+a{color:inherit}
+img{max-width:100%;display:block}
+:focus-visible{outline:2px solid var(--lavande);outline-offset:3px;border-radius:3px}
+h1,h2,h3{font-family:var(--serif);font-weight:400;margin:0;text-wrap:balance}
+p{margin:0}
+.band{padding-left:max(20px, env(safe-area-inset-left,0px));padding-right:max(20px, env(safe-area-inset-right,0px))}
+.wrap{max-width:var(--w);margin:0 auto}
+.eyebrow{font-weight:700;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--lav-clair)}
+.light .eyebrow{color:var(--lav-txt)}
+.bar{width:56px;height:5px;background:var(--lavande);border:0;margin:0}
+.light{background:var(--blanc);color:var(--encre)}
+.ivoire{background:var(--ivoire);color:var(--encre)}
+.ivoire .eyebrow{color:var(--lav-txt)}
+
+/* Barre de lecture + navigation */
+.progress{position:fixed;left:0;top:env(safe-area-inset-top,0px);height:2px;width:100%;background:var(--lavande);transform-origin:0 50%;transform:scaleX(0);z-index:60}
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:rgba(6,27,56,.86);backdrop-filter:saturate(1.4) blur(14px);-webkit-backdrop-filter:saturate(1.4) blur(14px);border-bottom:1px solid rgba(238,232,221,.08)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;height:56px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ivoire)}
+.brand svg{width:18px;height:25px;flex:none}
+.brand b{font-family:var(--serif);font-weight:500;font-size:18px;letter-spacing:.08em}
+.brand small{display:block;font-size:8.5px;letter-spacing:.5em;opacity:.75;margin-top:-3px}
+.nav ul{list-style:none;display:flex;gap:26px;margin:0;padding:0;font-size:13px}
+.nav ul a{text-decoration:none;opacity:.75;transition:opacity .2s}
+.nav ul a:hover,.nav ul a.active{opacity:1}
+.nav .cta{background:var(--lavande);color:var(--profond);font-weight:700;padding:7px 14px;border-radius:999px;opacity:1}
+@media (max-width:860px){.nav ul li:not(:last-child){display:none}}
+
+/* Boutons */
+.btns{display:flex;flex-wrap:wrap;gap:14px;justify-content:center}
+.btn{display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:15px;text-decoration:none;padding:14px 24px;border-radius:999px;border:1.5px solid transparent;cursor:pointer;transition:background .2s,border-color .2s,transform .2s}
+.btn:hover{transform:translateY(-1px)}
+.btn-p{background:var(--lavande);color:var(--profond)}
+.btn-p:hover{background:var(--lav-clair)}
+.btn-g{border-color:rgba(238,232,221,.45);color:var(--ivoire)}
+.btn-g:hover{border-color:var(--ivoire)}
+.light .btn-g,.ivoire .btn-g{border-color:var(--bleu);color:var(--bleu)}
+.link{color:var(--lav-clair);font-weight:700;text-decoration:none}
+.link:hover{text-decoration:underline;text-underline-offset:4px}
+.light .link{color:var(--action)}
+
+/* HERO */
+.hero{position:relative;overflow:hidden;text-align:center}
+.hero .wrap{padding-block:72px 0;display:flex;flex-direction:column;align-items:center;gap:26px}
+.arcs{position:absolute;left:50%;top:-120px;width:1100px;height:1100px;margin-left:-550px;pointer-events:none;opacity:.55}
+.arcs circle{fill:none;stroke:#7D93D6;stroke-width:1;stroke-opacity:.22}
+.flame{width:84px;height:115px;position:relative}
+.flame svg{width:100%;height:100%;overflow:visible}
+.flame .f1{transform-origin:50% 100%;animation:fl1 3.4s ease-in-out infinite}
+.flame .f2{transform-origin:50% 100%;animation:fl2 2.7s ease-in-out infinite}
+.flame .sp{animation:sp 2.4s ease-in-out infinite}
+.hero h1{font-size:clamp(46px,9vw,124px);line-height:.98;letter-spacing:-.01em;max-width:11ch;position:relative}
+.hero h1 em{font-style:italic;color:var(--lav-clair)}
+.hero .sub{font-size:clamp(18px,2.1vw,23px);max-width:640px;opacity:.88;position:relative}
+.hero .stage{width:100%;margin-top:40px;position:relative}
+.hero .stage .frame{border-radius:22px 22px 0 0;overflow:hidden;transform-origin:50% 0;will-change:transform;max-width:100%}
+.hero .stage img{width:100%;aspect-ratio:16/8;object-fit:cover;object-position:50% 35%}
+.hero .stage figcaption{position:absolute;left:24px;bottom:20px;background:rgba(6,27,56,.82);color:var(--ivoire);font-size:13px;padding:8px 14px;border-radius:999px;text-align:left}
+@media (max-width:700px){.hero .stage img{aspect-ratio:4/3}.hero .stage .frame{border-radius:14px 14px 0 0}.hero .stage figcaption{left:12px;right:12px;bottom:12px;border-radius:10px}}
+
+/* Chapitres */
+.chap .wrap{padding-block:120px;display:flex;flex-direction:column;gap:56px}
+.chap .head{display:flex;flex-direction:column;gap:16px;max-width:860px}
+.chap h2{font-size:clamp(38px,6vw,76px);line-height:1.02;letter-spacing:-.005em}
+.chap h2 em{font-style:italic;color:var(--lav-clair)}
+.light h2 em,.ivoire h2 em{color:var(--lav-txt)}
+.chap .lede{font-size:clamp(18px,1.9vw,21px);max-width:640px;opacity:.85}
+.light .lede,.ivoire .lede{color:var(--encre-2);opacity:1}
+.light h2,.ivoire h2{color:var(--bleu)}
+
+/* Texte qui s'allume au défilement */
+.lit{font-family:var(--serif);font-size:clamp(30px,4.6vw,58px);line-height:1.18;max-width:1000px}
+.lit .w{transition:color .35s}
+.js .lit .w{color:var(--dim)}
+.js .lit .w.on{color:var(--ivoire)}
+.lit .w.hl.on{color:var(--lav-clair)}
+
+/* Chiffres Insee */
+.stats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.stat{background:var(--bleu);border-radius:22px;padding:40px;display:flex;flex-direction:column;gap:14px;min-width:0}
+.stat .big{font-family:var(--serif);font-size:clamp(50px,6.4vw,92px);line-height:1;display:flex;align-items:baseline;gap:18px;flex-wrap:wrap;font-variant-numeric:tabular-nums}
+.stat .big .from{color:rgba(238,232,221,.4)}
+.stat .big .arrow{font-family:var(--sans);font-size:.4em;color:var(--lavande)}
+.stat .big .to{color:var(--ivoire)}
+.stat p{opacity:.82;max-width:440px}
+.src{font-size:13px;opacity:.6}
+.src a{color:inherit}
+@media (max-width:820px){.stats{grid-template-columns:1fr}.stat{padding:28px}}
+
+/* Avant / maintenant */
+.shift{display:flex;flex-direction:column;border-top:1px solid rgba(238,232,221,.14)}
+.row{display:grid;grid-template-columns:minmax(0,.7fr) minmax(0,1fr) 40px minmax(0,1fr);gap:20px;align-items:center;padding:26px 0;border-bottom:1px solid rgba(238,232,221,.14)}
+.row .k{font-weight:700;font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:var(--lav-clair)}
+.row .before{font-family:var(--serif);font-size:clamp(20px,2.3vw,28px);color:rgba(238,232,221,.45);text-decoration:line-through;text-decoration-color:rgba(142,112,229,.6);text-decoration-thickness:2px}
+.row .to{color:var(--lavande);font-size:22px;text-align:center}
+.row .after{font-family:var(--serif);font-size:clamp(20px,2.3vw,28px)}
+@media (max-width:760px){.row{grid-template-columns:1fr;gap:6px}.row .to{text-align:left;transform:rotate(90deg);width:20px}}
+
+/* Services */
+.tiles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.tile{background:var(--ivoire);border-radius:22px;padding:34px 30px;display:flex;flex-direction:column;gap:12px;min-width:0;border:1.5px solid transparent;transition:border-color .3s,transform .3s}
+.tile:hover{border-color:var(--lavande);transform:translateY(-4px)}
+.tile .n{font-family:var(--serif);font-size:20px;color:var(--lav-txt)}
+.tile h3{font-size:28px;line-height:1.12;color:var(--bleu)}
+.tile p{color:var(--encre-2);font-size:16px}
+.tile ul{list-style:none;padding:0;margin:6px 0 0;display:flex;flex-direction:column;gap:8px;font-size:15px;color:var(--encre)}
+.tile li{display:flex;gap:10px}
+.tile li::before{content:"";flex:none;width:6px;height:6px;border-radius:50%;background:var(--lavande);margin-top:9px}
+.tile.dark{background:var(--bleu);color:var(--ivoire)}
+.tile.dark h3{color:var(--ivoire)}
+.tile.dark p,.tile.dark ul{color:var(--ivoire);opacity:.85}
+.tile.dark .n{color:var(--lav-clair)}
+@media (max-width:980px){.tiles{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:640px){.tiles{grid-template-columns:1fr}}
+
+.method .price .deduct{color:var(--lav-clair);font-weight:700;opacity:1}
+.tag{display:inline-block;font-size:11px;font-weight:900;letter-spacing:.18em;text-transform:uppercase;background:var(--lavande);color:var(--profond);padding:4px 10px;border-radius:999px}
+.launch{border:1.5px solid var(--lavande);border-radius:18px;padding:18px 22px;display:flex;flex-direction:column;gap:8px;align-items:flex-start}
+.launch p{opacity:.9}
+.launch b{font-family:var(--serif);font-weight:400;font-size:30px;color:var(--ivoire)}
+.contact .offer{max-width:640px;border:1.5px solid var(--lavande);border-radius:999px;padding:12px 22px;font-size:15px}
+@media (max-width:640px){.contact .offer{border-radius:18px}}
+/* Deux cibles */
+.duo{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.target{border-radius:22px;overflow:hidden;display:flex;flex-direction:column;min-width:0;background:var(--ivoire);color:var(--encre)}
+.target .ph{aspect-ratio:16/9;overflow:hidden;background:var(--bleu);max-width:100%}
+.target .ph img{width:100%;height:100%;object-fit:cover}
+.target .in{padding:32px;display:flex;flex-direction:column;gap:14px}
+.target h3{font-size:clamp(30px,3.4vw,42px);line-height:1.05;color:var(--bleu)}
+.target .pain{color:var(--encre-2)}
+.target ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:8px}
+.target li{display:flex;gap:10px}
+.target li::before{content:"";flex:none;width:7px;height:7px;border-radius:50%;background:var(--lavande);margin-top:9px}
+.target .proof{margin-top:6px;padding-top:14px;border-top:1px solid var(--filet);font-size:15px;color:var(--encre-2)}
+.target .proof b{font-family:var(--serif);font-weight:400;font-size:30px;color:var(--bleu);display:block;line-height:1.1}
+.others{text-align:center;opacity:.75;font-size:15px}
+@media (max-width:860px){.duo{grid-template-columns:1fr}}
+/* Résultats */
+.nums{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;border-top:1px solid rgba(238,232,221,.14)}
+.num{padding:34px 24px 0 0;display:flex;flex-direction:column;gap:10px;min-width:0}
+.num .v{font-family:var(--serif);font-size:clamp(52px,6.4vw,88px);line-height:1;color:var(--ivoire);font-variant-numeric:tabular-nums}
+.num .v small{font-size:.45em;color:var(--lav-clair)}
+.num .l{font-size:15px;opacity:.8;max-width:240px}
+.num .from{font-size:13px;color:var(--lav-clair);font-weight:700;letter-spacing:.06em}
+@media (max-width:900px){.nums{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:34px}}
+@media (max-width:480px){.nums{grid-template-columns:1fr}}
+
+/* Missions */
+.cases{display:flex;flex-direction:column;gap:20px}
+.case{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:48px;background:var(--blanc);border-radius:22px;padding:44px;min-width:0}
+.case .meta{display:flex;flex-direction:column;gap:14px}
+.case .sector{font-size:12px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--lav-txt)}
+.case h3{font-size:clamp(28px,3.2vw,40px);line-height:1.08;color:var(--bleu)}
+.case .kpi{margin-top:auto;padding-top:18px;border-top:1px solid var(--filet);display:flex;flex-direction:column;gap:4px}
+.case .kpi b{font-family:var(--serif);font-weight:400;font-size:clamp(40px,4.4vw,58px);line-height:1;color:var(--bleu);font-variant-numeric:tabular-nums}
+.case .kpi span{font-size:14px;color:var(--encre-2)}
+.case .body{display:flex;flex-direction:column;gap:16px;color:var(--encre-2)}
+.case .body ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:12px}
+.case .body li{display:flex;gap:12px}
+.case .body li::before{content:"";flex:none;width:7px;height:7px;border-radius:50%;background:var(--lavande);margin-top:9px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{font-size:12.5px;font-weight:700;color:var(--bleu);border:1px solid var(--filet);padding:5px 12px;border-radius:999px;background:var(--ivoire)}
+.case.small{grid-template-columns:1fr;padding:30px 44px}
+.case.small .row2{display:flex;flex-wrap:wrap;gap:12px 40px;align-items:baseline;justify-content:space-between}
+@media (max-width:860px){.case{grid-template-columns:1fr;gap:26px;padding:28px}.case.small{padding:26px 28px}}
+
+/* Méthode : titre collant + étapes */
+.method{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:64px;align-items:start}
+.method .stick{position:sticky;top:110px;display:flex;flex-direction:column;gap:18px}
+.method .price{display:flex;flex-direction:column;gap:4px;margin-top:10px;padding:22px 24px;border-radius:18px;background:var(--bleu)}
+.method .price b{font-family:var(--serif);font-weight:400;font-size:54px;line-height:1}
+.method .price span{font-size:14px;opacity:.8}
+.steps{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:28px;counter-reset:s}
+.step{display:flex;flex-direction:column;gap:14px;min-width:0}
+.step .ph{border-radius:18px;overflow:hidden;aspect-ratio:16/9;max-width:100%;background:var(--bleu)}
+.step .ph img{width:100%;height:100%;object-fit:cover;transition:transform .8s cubic-bezier(.2,.7,.2,1)}
+.step:hover .ph img{transform:scale(1.03)}
+.step .t{display:flex;align-items:baseline;gap:16px}
+.step .t::before{counter-increment:s;content:"0" counter(s);font-family:var(--serif);font-size:20px;color:var(--lav-clair)}
+.step h3{font-size:clamp(26px,2.8vw,34px)}
+.step p{opacity:.82;max-width:560px}
+@media (max-width:900px){.method{grid-template-columns:1fr;gap:36px}.method .stick{position:static}}
+
+/* Président */
+.pres{display:grid;grid-template-columns:minmax(0,.75fr) minmax(0,1.25fr);gap:64px;align-items:start}
+.portrait{margin:0;border-radius:22px;overflow:hidden;background:var(--bleu);color:var(--ivoire);max-width:100%}
+.portrait img{width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;object-position:50% 20%}
+.portrait figcaption{padding:22px 26px;border-top:5px solid var(--lavande)}
+.portrait .name{font-family:var(--serif);font-size:28px;line-height:1.1}
+.portrait .role{font-size:12px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--lav-clair);margin-top:6px}
+.pres .right{display:flex;flex-direction:column;gap:30px;min-width:0}
+.quote{font-family:var(--serif);font-size:clamp(30px,3.6vw,46px);line-height:1.15;color:var(--bleu)}
+.quote em{color:var(--lav-txt)}
+.cols{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:32px;color:var(--encre-2)}
+.cols h3{font-size:22px;color:var(--bleu);margin-bottom:10px}
+.cols p+p{margin-top:12px}
+.values{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.value{border-top:2px solid var(--lavande);padding-top:12px}
+.value b{display:block;font-family:var(--serif);font-weight:400;font-size:22px;color:var(--bleu)}
+.value span{font-size:15px;color:var(--encre-2)}
+.timeline{list-style:none;padding:0;margin:0;border-left:2px solid var(--filet);margin-left:6px}
+.timeline li{position:relative;padding:0 0 18px 24px;color:var(--encre-2)}
+.timeline li::before{content:"";position:absolute;left:-7px;top:7px;width:12px;height:12px;border-radius:50%;background:var(--blanc);border:2px solid var(--lavande)}
+.timeline b{color:var(--bleu);display:block}
+@media (max-width:900px){.pres{grid-template-columns:1fr;gap:36px}.portrait{max-width:420px}.cols,.values{grid-template-columns:1fr}}
+
+/* Contact */
+.contact{text-align:center}
+.contact .wrap{padding-block:130px;display:flex;flex-direction:column;align-items:center;gap:26px}
+.contact h2{font-size:clamp(44px,8vw,104px);line-height:1}
+.contact .lede{margin:0 auto}
+.mail{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:center;margin-top:10px}
+.mail .val{font-family:var(--serif);font-size:clamp(22px,3vw,32px);user-select:all;word-break:break-word}
+.copy{font-family:var(--sans);font-size:13px;font-weight:700;background:transparent;color:var(--ivoire);border:1px solid rgba(238,232,221,.4);border-radius:999px;padding:8px 14px;cursor:pointer}
+.copy:hover{border-color:var(--ivoire)}
+.contact .alt{display:flex;flex-wrap:wrap;gap:12px 26px;justify-content:center;font-size:15px}
+.contact .note{font-size:14px;opacity:.6}
+
+/* Légal + pied */
+.legal .wrap{padding-block:8px 24px;border-top:1px solid rgba(238,232,221,.1)}
+.legal details{border-bottom:1px solid rgba(238,232,221,.08)}
+.legal summary{cursor:pointer;padding:14px 0;font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--lav-clair)}
+.legal .txt{max-width:760px;font-size:14px;line-height:1.7;opacity:.82;padding-bottom:18px;display:flex;flex-direction:column;gap:10px}
+.legal b{color:var(--ivoire)}
+footer .wrap{padding-block:24px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;font-size:13px;opacity:.72;border-top:1px solid rgba(238,232,221,.1)}
+footer em{font-family:var(--serif);font-size:16px}
+footer .links{display:flex;gap:18px}
+
+.top{position:fixed;right:calc(18px + env(safe-area-inset-right,0px));bottom:calc(18px + env(safe-area-inset-bottom,0px));width:44px;height:44px;border-radius:50%;background:var(--lavande);color:var(--profond);border:0;font-size:18px;font-weight:700;cursor:pointer;transition:opacity .3s,transform .3s;z-index:45}
+.top.hide{opacity:0;transform:translateY(10px);pointer-events:none}
+
+/* Apparitions : le contenu reste visible, il glisse seulement */
+.rv{transition:transform 1s cubic-bezier(.2,.7,.2,1)}
+.rv.wait{transform:translateY(28px)}
+.load{animation:rise 1s cubic-bezier(.2,.7,.2,1) both}
+.d1{animation-delay:.05s}.d2{animation-delay:.15s}.d3{animation-delay:.28s}.d4{animation-delay:.4s}.d5{animation-delay:.55s}
+@keyframes rise{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+@keyframes fl1{0%,100%{transform:rotate(0) scaleY(1)}50%{transform:rotate(-2.5deg) scaleY(1.04)}}
+@keyframes fl2{0%,100%{transform:rotate(0) scaleY(1)}40%{transform:rotate(3deg) scaleY(1.06)}70%{transform:rotate(-1deg) scaleY(.98)}}
+@keyframes sp{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .rv.wait{transform:none}
+  .js .lit .w{color:var(--ivoire)}
+}
+
+/* Pages réalisations */
+.crumb{font-size:13px;opacity:.7;display:flex;gap:8px;flex-wrap:wrap;justify-content:center}
+.crumb a{text-decoration:none}
+.crumb a:hover{text-decoration:underline}
+.case-hero{text-align:center;position:relative;overflow:hidden}
+.case-hero .wrap{padding-block:80px 72px;display:flex;flex-direction:column;align-items:center;gap:22px}
+.case-hero h1{font-size:clamp(42px,7vw,96px);line-height:1;max-width:14ch}
+.case-hero h1 em{font-style:italic;color:var(--lav-clair)}
+.case-hero .sub{font-size:clamp(18px,2vw,22px);max-width:680px;opacity:.86}
+.facts{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
+.fact{font-size:13px;font-weight:700;border:1px solid rgba(238,232,221,.25);padding:7px 14px;border-radius:999px}
+.kpis{display:grid;grid-template-columns:repeat(var(--n,3),minmax(0,1fr));gap:18px}
+.kpi-c{background:var(--bleu);border-radius:22px;padding:34px 30px;display:flex;flex-direction:column;gap:10px;min-width:0}
+.kpi-c .v{font-family:var(--serif);font-size:clamp(50px,6vw,84px);line-height:1;font-variant-numeric:tabular-nums}
+.kpi-c .v small{font-size:.45em;color:var(--lav-clair)}
+.kpi-c .l{opacity:.82;font-size:15px}
+.kpi-c .f{font-size:13px;font-weight:700;color:var(--lav-clair);letter-spacing:.04em}
+@media (max-width:860px){.kpis{grid-template-columns:1fr}}
+.story{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.story article{background:var(--ivoire);border-radius:22px;padding:30px;display:flex;flex-direction:column;gap:12px;min-width:0}
+.story h3{font-size:28px;color:var(--bleu)}
+.story p,.story li{color:var(--encre-2)}
+.story ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px}
+.story li{display:flex;gap:10px}
+.story li::before{content:"";flex:none;width:7px;height:7px;border-radius:50%;background:var(--lavande);margin-top:9px}
+@media (max-width:900px){.story{grid-template-columns:1fr}}
+.chart{display:flex;flex-direction:column;gap:26px;background:var(--bleu);border-radius:22px;padding:40px}
+.chart h3{font-size:28px}
+.chart .grp{display:flex;flex-direction:column;gap:10px}
+.chart .grp>span{font-size:13px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--lav-clair)}
+.bar-row{display:grid;grid-template-columns:90px minmax(0,1fr) 70px;gap:14px;align-items:center;font-size:14px}
+.bar-row .track{height:30px;background:rgba(238,232,221,.08);border-radius:8px;overflow:hidden}
+.bar-row .fill{height:100%;border-radius:8px;background:rgba(238,232,221,.35);width:0;transition:width 1.3s cubic-bezier(.2,.7,.2,1)}
+.bar-row.after .fill{background:var(--lavande)}
+.bar-row b{font-family:var(--serif);font-weight:400;font-size:24px;text-align:right;font-variant-numeric:tabular-nums}
+.chart .note{font-size:13px;opacity:.6}
+@media (max-width:560px){.chart{padding:26px}.bar-row{grid-template-columns:64px minmax(0,1fr) 54px;gap:10px}}
+.stack{display:flex;flex-wrap:wrap;gap:8px}
+.stack .chip{background:var(--blanc)}
+.next{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.next a{background:var(--bleu);color:var(--ivoire);border-radius:22px;padding:30px;text-decoration:none;display:flex;flex-direction:column;gap:8px;border:1.5px solid transparent;transition:border-color .3s}
+.next a:hover{border-color:var(--lavande)}
+.next a span{font-size:12px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--lav-clair)}
+.next a b{font-family:var(--serif);font-weight:400;font-size:28px;line-height:1.1}
+@media (max-width:760px){.next{grid-template-columns:1fr}}
+/* Grille des réalisations */
+.work{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.work a{background:var(--blanc);color:var(--encre);border-radius:22px;padding:32px;text-decoration:none;display:flex;flex-direction:column;gap:14px;min-width:0;border:1.5px solid transparent;transition:border-color .3s,transform .3s}
+.work a:hover{border-color:var(--lavande);transform:translateY(-4px)}
+.work .sector{font-size:12px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--lav-txt)}
+.work h3{font-size:30px;line-height:1.08;color:var(--bleu)}
+.work .big{font-family:var(--serif);font-size:48px;line-height:1;color:var(--bleu);margin-top:auto;padding-top:14px;border-top:1px solid var(--filet);font-variant-numeric:tabular-nums}
+.work .big small{display:block;font-family:var(--sans);font-size:14px;color:var(--encre-2);margin-top:6px}
+.work .go{font-weight:700;color:var(--action);font-size:15px}
+@media (max-width:980px){.work{grid-template-columns:1fr}}
+.keyfig{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;border-top:1px solid rgba(238,232,221,.14)}
+.keyfig div{padding:30px 20px 0 0;display:flex;flex-direction:column;gap:8px;min-width:0}
+.keyfig b{font-family:var(--serif);font-weight:400;font-size:clamp(46px,5.6vw,76px);line-height:1;font-variant-numeric:tabular-nums}
+.keyfig span{font-size:15px;opacity:.8}
+@media (max-width:900px){.keyfig{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:28px}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+  <symbol id="flame" viewBox="0 0 150 205">
+    <path d="M 72,8 C 75,36 63,58 43,83 C 23,108 15,132 25,157 C 26,130 40,112 57,90 C 77,64 86,39 72,8 Z" fill="#EEE8DD"/>
+    <path d="M 90,22 C 109,56 108,75 87,102 C 67,128 59,148 62,169 C 42,152 44,131 57,109 C 77,79 96,61 90,22 Z" fill="#8E70E5"/>
+    <path d="M 117,104 C 139,139 136,169 115,189 C 102,202 81,199 74,187 C 60,161 81,136 100,119 C 107,113 111,108 117,104 Z" fill="#EEE8DD"/>
+    <circle cx="117" cy="95" r="10" fill="#EEE8DD"/>
+  </symbol>
+</defs></svg>
+<div class="progress" id="progress" aria-hidden="true"></div>
+<nav class="nav band" id="nav" aria-label="Navigation principale">
+  <div class="wrap">
+    <a class="brand" href="../index.html" aria-label="Prométhée Consulting, accueil"><svg aria-hidden="true"><use href="#flame"/></svg><span><b>PROMÉTHÉE</b><small>CONSULTING</small></span></a>
+    <ul><li><a href="../index.html#pour-qui">Pour qui</a></li><li><a href="../index.html#services">Services</a></li><li><a href="../realisations/index.html" class="active">Réalisations</a></li><li><a href="../index.html#methode">Méthode</a></li><li><a href="../index.html#president">Le président</a></li><li><a class="cta" href="#contact">Contact</a></li></ul>
+  </div>
+</nav>
+<header class="case-hero band" id="top">
+  <svg class="arcs" viewBox="0 0 1100 1100" aria-hidden="true"><circle cx="550" cy="550" r="180"/><circle cx="550" cy="550" r="290"/><circle cx="550" cy="550" r="400"/><circle cx="550" cy="550" r="520"/></svg>
+  <div class="wrap">
+    <nav class="crumb load d1" aria-label="Fil d'Ariane"><a href="../index.html">Accueil</a><span>/</span><a href="index.html">Réalisations</a><span>/</span><span>Club de basket-ball</span></nav>
+    <div class="eyebrow load d2">Club sportif · Basket-ball · 2025–2026</div>
+    <h1 class="load d3">Un club <em>piloté depuis une seule plateforme.</em></h1>
+    <p class="sub load d4">Adhérents, parents, matchs, présences, plannings, terrains, billetterie et boutique : tout ce que le club gérait sur des tableurs et des messageries, réuni au même endroit.</p>
+    <div class="facts load d5"><span class="fact">Plateforme web</span><span class="fact">Paiements en ligne</span><span class="fact">E-mailing</span><span class="fact">Automatisations</span><span class="fact">Tableaux de bord</span></div>
+  </div>
+</header>
+<main>
+  <section class="chap band" style="background:var(--profond);padding-top:0">
+    <div class="wrap" style="padding-top:0;gap:28px">
+      <div class="kpis" style="--n:3"><div class="kpi-c rv"><span class="v"><span data-count="70">70</span><small>&nbsp;%</small></span><span class="l">de remplissage des matchs en saison régulière</span><span class="f">contre 38 % avant</span></div><div class="kpi-c rv"><span class="v"><span data-count="93">93</span><small>&nbsp;%</small></span><span class="l">de remplissage en play-offs</span><span class="f">contre 55 % avant</span></div><div class="kpi-c rv"><span class="v"><span data-count="4">4</span><small>&nbsp;%</small></span><span class="l">de taux de conversion sur la boutique en ligne intégrée</span></div></div>
+      <div class="chart rv"><h3>Taux de remplissage des matchs</h3><div class="grp"><span>Saison régulière</span><div class="bar-row before"><span>Avant</span><div class="track"><div class="fill" data-w="38.0%"></div></div><b>38&nbsp;%</b></div><div class="bar-row after"><span>Après</span><div class="track"><div class="fill" data-w="70.0%"></div></div><b>70&nbsp;%</b></div></div><div class="grp"><span>Play-offs</span><div class="bar-row before"><span>Avant</span><div class="track"><div class="fill" data-w="55.0%"></div></div><b>55&nbsp;%</b></div><div class="bar-row after"><span>Après</span><div class="track"><div class="fill" data-w="93.0%"></div></div><b>93&nbsp;%</b></div></div><p class="note">Échelle de 0 à 100 %. Données fournies par le club.</p></div>
+    </div>
+  </section>
+  <section class="chap band light">
+    <div class="wrap">
+      <div class="head rv"><div class="eyebrow">La mission</div><h2>Du constat <em>au résultat.</em></h2></div>
+      <div class="story">
+        <article class="rv"><span class="eyebrow">01 / Contexte</span><h3>Le point de départ</h3><p>Un club dont l'organisation reposait sur des bénévoles, des tableurs et des messageries. Le reporting prenait plusieurs heures et les tribunes restaient à moitié vides.</p></article>
+        <article class="rv"><span class="eyebrow">02 / Actions</span><h3>Ce qui a été fait</h3><ul><li>Application centralisant adhérents et parents, matchs et résultats, présences joueurs et coachs, planning des coachs et disponibilité des terrains</li><li>Espaces sécurisés par rôle (coachs, adhérents)</li><li>Tableau de bord partagé : performance des coachs, résultats, visibilité</li><li>Module de publications et boutique en ligne intégrée</li><li>Paiements en ligne, e-mailing et automatisations</li></ul></article>
+        <article class="rv"><span class="eyebrow">03 / Résultats</span><h3>Ce qui a changé</h3><ul><li>Reporting réduit de plusieurs heures à quelques minutes</li><li>Remplissage des matchs : 38 → 70 % en saison, 55 → 93 % en play-offs</li><li>Une visibilité qui a contribué à l'obtention de l'organisation de l'AllRiviera 2026</li></ul></article>
+      </div>
+      <div class="head rv" style="gap:12px"><div class="eyebrow">Outils et compétences</div><div class="stack"><span class="chip">Next.js</span><span class="chip">Supabase</span><span class="chip">Stripe</span><span class="chip">Brevo</span><span class="chip">n8n</span><span class="chip">Tableaux de bord</span></div></div>
+    </div>
+  </section>
+  <section class="chap band ivoire">
+    <div class="wrap" style="padding-block:80px">
+      <div class="head rv"><div class="eyebrow">Autres réalisations</div></div>
+      <div class="next"><a href="phone-clinic.html"><span>Commerce · Voiron</span><b>Phone Clinic</b></a><a href="cannes-volley.html"><span>Sport · Cannes</span><b>Cannes Volley</b></a></div>
+    </div>
+  </section>
+</main>
+<section class="contact band" id="contact" style="background:var(--profond)">
+  <div class="wrap">
+    <div class="flame rv" aria-hidden="true" style="width:56px;height:77px"><svg viewBox="0 0 150 205"><use href="#flame"/></svg></div>
+    <h2 class="rv">Parlons de votre <em style="color:var(--lav-clair)">croissance.</em></h2>
+    <p class="lede rv">Décrivez en quelques lignes votre activité et ce qui vous freine. Écrivez « DIAGNOSTIC » pour réserver 30 minutes offertes. Réponse sous 48 heures ouvrées.</p>
+    <p class="offer rv"><span class="tag">Offre de lancement</span> Audit à 590&nbsp;€ au lieu de 990&nbsp;€ pour 5 clients, en échange de la publication de vos résultats et de votre avis.</p>
+    <div class="mail rv">
+      <span class="val" id="email">andiaye@prometheus-conseil.com</span>
+      <button class="copy" type="button" id="copy">Copier l'adresse</button>
+    </div>
+    <div class="alt rv">
+      <a class="link" href="mailto:andiaye@prometheus-conseil.com?subject=DIAGNOSTIC%20-%20Prom%C3%A9th%C3%A9e%20Consulting">Écrire un e-mail</a>
+      <a class="link" href="https://www.linkedin.com/company/prometheeconsulting/" target="_blank" rel="noopener">Page LinkedIn</a>
+      <a class="link" href="https://www.linkedin.com/in/alioune-badara-ndiaye-1389082a1/" target="_blank" rel="noopener">Profil d'Alioune Badara Ndiaye</a>
+    </div>
+    <p class="note">Basé à Toulouse. Missions en France et au Sénégal, sur site ou à distance.</p>
+  </div>
+</section>
+
+<section class="legal band" aria-label="Informations légales" style="background:var(--profond)">
+  <div class="wrap">
+    <details id="mentions-legales">
+      <summary>Mentions légales</summary>
+      <div class="txt">
+        <p><b>Éditeur du site.</b> Alioune Badara Ndiaye, entrepreneur individuel (EI), exerçant sous le nom commercial PrometheusConseil (marque Prométhée Consulting). Immatriculé au Registre national des entreprises le 24/09/2026. SIREN&nbsp;: 130&nbsp;541&nbsp;592 · SIRET&nbsp;: 130&nbsp;541&nbsp;592&nbsp;00015. Adresse&nbsp;: 26 rue de la Caravelle, 31500 Toulouse. E-mail&nbsp;: andiaye@prometheus-conseil.com.</p>
+        <p><b>Directeur de la publication.</b> Alioune Badara Ndiaye.</p>
+        <p><b>Hébergement.</b> GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, États-Unis (service GitHub Pages).</p>
+        <p><b>Propriété intellectuelle.</b> Les textes, le logo et l'identité visuelle de Prométhée Consulting sont protégés. Toute reproduction sans autorisation écrite est interdite.</p>
+      </div>
+    </details>
+    <details id="confidentialite">
+      <summary>Confidentialité</summary>
+      <div class="txt">
+        <p>Ce site ne dépose aucun cookie, n'utilise aucun outil de mesure d'audience et ne contient aucun formulaire. Les polices sont chargées depuis Google Fonts, ce qui transmet votre adresse IP à Google lors de l'affichage.</p>
+        <p>Si vous nous écrivez par e-mail, votre message et vos coordonnées servent uniquement à vous répondre et à préparer une éventuelle mission. Ils sont conservés au maximum 3 ans après le dernier échange.</p>
+        <p>Conformément au RGPD, vous pouvez demander l'accès, la rectification ou la suppression de vos données à andiaye@prometheus-conseil.com. Vous pouvez aussi saisir la CNIL (cnil.fr).</p>
+      </div>
+    </details>
+  </div>
+</section>
+
+<footer class="band" style="background:var(--profond)">
+  <div class="wrap">
+    <span>© 2026 Prométhée Consulting · Toulouse</span>
+    <span class="links"><a href="#mentions-legales" data-open>Mentions légales</a><a href="#confidentialite" data-open>Confidentialité</a></span>
+    <em>Éclairer aujourd'hui. Transformer demain.</em>
+  </div>
+</footer>
+
+<button class="top hide" id="topBtn" type="button" aria-label="Revenir en haut">↑</button>
+
+
+<script>
+(function(){
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var root = document.documentElement;
+
+  /* Texte qui s'allume : découpe en mots */
+  var lit = document.getElementById('lit');
+  var words = [];
+  if (lit) {
+    var hl = lit.querySelector('[data-hl]'), hlText = hl ? hl.textContent : '';
+    if (hl) hl.remove();
+    var base = lit.textContent.trim();
+    lit.textContent = '';
+    function add(txt, isHl){ txt.split(/\s+/).forEach(function(w){ if(!w) return; var s=document.createElement('span'); s.className='w'+(isHl?' hl':''); s.textContent=w+' '; lit.appendChild(s); words.push(s); }); }
+    add(base, false); add(hlText, true);
+    if (!reduce) root.classList.add('js');
+  }
+  function lightWords(){
+    if (!words.length || reduce) return;
+    var r = lit.getBoundingClientRect(), vh = window.innerHeight;
+    var start = vh * .85, end = vh * .35;
+    var p = (start - r.top) / ((start - end) + r.height * .6);
+    p = Math.max(0, Math.min(1, p));
+    var n = Math.round(p * words.length);
+    words.forEach(function(w,i){ w.classList.toggle('on', i < n); });
+  }
+
+  /* Apparitions */
+  var items = document.querySelectorAll('.rv');
+  if (!reduce && 'IntersectionObserver' in window) {
+    var vh = window.innerHeight;
+    items.forEach(function(el){ if (el.getBoundingClientRect().top > vh) el.classList.add('wait'); });
+    var io = new IntersectionObserver(function(es){ es.forEach(function(e){ if (e.isIntersecting){ e.target.classList.remove('wait'); io.unobserve(e.target); } }); }, {rootMargin:'0px 0px -8% 0px'});
+    items.forEach(function(el){ io.observe(el); });
+  }
+
+  /* Compteurs */
+  var counters = document.querySelectorAll('[data-count]');
+  if (!reduce && 'IntersectionObserver' in window) {
+    var co = new IntersectionObserver(function(es){ es.forEach(function(e){
+      if (!e.isIntersecting) return; co.unobserve(e.target);
+      var el = e.target, to = +el.getAttribute('data-count'), suffix = el.innerHTML.replace(/^[0-9]+/, ''), t0 = null;
+      function step(t){ if(!t0) t0=t; var k=Math.min(1,(t-t0)/1200), v=Math.round(to*(1-Math.pow(1-k,3))); el.innerHTML = v + suffix; if(k<1) requestAnimationFrame(step); }
+      requestAnimationFrame(step);
+    }); }, {threshold:.6});
+    counters.forEach(function(c){ if (c.getBoundingClientRect().top > window.innerHeight) co.observe(c); });
+  }
+
+  /* Photo du hero qui s'élargit au défilement */
+  var frame = document.getElementById('stageFrame');
+  function stage(){
+    if (!frame || reduce) return;
+    var r = frame.getBoundingClientRect(), vh = window.innerHeight;
+    var p = Math.max(0, Math.min(1, (vh - r.top) / (vh * .9)));
+    frame.style.transform = 'scale(' + (0.9 + 0.1 * p) + ')';
+  }
+
+  /* Progression, navigation, bouton haut */
+  var prog = document.getElementById('progress'), topBtn = document.getElementById('topBtn');
+  var links = Array.prototype.slice.call(document.querySelectorAll('.nav ul a[href^="#"]'));
+  var secs = links.map(function(a){ return document.querySelector(a.getAttribute('href')); });
+  function onScroll(){
+    var max = root.scrollHeight - root.clientHeight, y = root.scrollTop || document.body.scrollTop;
+    prog.style.transform = 'scaleX(' + (max > 0 ? y / max : 0) + ')';
+    topBtn.classList.toggle('hide', y < 700);
+    var cur = -1; secs.forEach(function(s,i){ if (s && s.getBoundingClientRect().top < 160) cur = i; });
+    links.forEach(function(a,i){ a.classList.toggle('active', i === cur); });
+    lightWords(); stage();
+  }
+  window.addEventListener('scroll', onScroll, {passive:true}); window.addEventListener('resize', onScroll); onScroll();
+  topBtn.addEventListener('click', function(){ window.scrollTo({top:0, behavior: reduce ? 'auto' : 'smooth'}); });
+
+  /* Barres de comparaison */
+  var bars = document.querySelectorAll('[data-w]');
+  bars.forEach(function(b){ b.style.width = b.getAttribute('data-w'); });
+  if (!reduce && 'IntersectionObserver' in window) {
+    var bo = new IntersectionObserver(function(es){ es.forEach(function(e){ if (e.isIntersecting){ var b=e.target; requestAnimationFrame(function(){ b.style.width = b.getAttribute('data-w'); }); bo.unobserve(b); } }); }, {threshold:.4});
+    bars.forEach(function(b){ if (b.getBoundingClientRect().top > window.innerHeight){ b.style.width = '0'; bo.observe(b); } });
+  }
+
+  /* Mentions légales depuis le pied de page */
+  function openLegal(id){ var d = document.getElementById(id); if (d && d.tagName === 'DETAILS'){ d.open = true; d.scrollIntoView({block:'start'}); } }
+  document.querySelectorAll('[data-open]').forEach(function(a){ a.addEventListener('click', function(e){ e.preventDefault(); openLegal(a.getAttribute('href').slice(1)); }); });
+  if (location.hash) openLegal(location.hash.slice(1));
+
+  /* Copier l'e-mail */
+  var btn = document.getElementById('copy');
+  if (btn) btn.addEventListener('click', function(){
+    var text = 'andiaye@prometheus-conseil.com';
+    var done = function(){ btn.textContent = 'Adresse copiée'; setTimeout(function(){ btn.textContent = "Copier l'adresse"; }, 1800); };
+    var fallback = function(){ var r = document.createRange(); r.selectNodeContents(document.getElementById('email')); var s = window.getSelection(); s.removeAllRanges(); s.addRange(r); btn.textContent = 'Sélectionnée, faites Ctrl+C'; };
+    try { if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(text).then(done, fallback); else fallback(); } catch (e) { fallback(); }
+  });
+})();
+</script>
+</body>
+</html>
