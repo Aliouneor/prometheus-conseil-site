@@ -3,10 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Prométhée Consulting</title>
-<meta name="description" content="Prométhée Consulting, conseil à Toulouse en IA appliquée, automatisation et acquisition client pour commerces, TPE et PME. Audit à prix fixe.">
+<title>Prométhée Consulting | Conseil IA et automatisation à Toulouse</title>
+<meta name="description" content="Conseil en IA appliquée, automatisation et acquisition client pour commerces de proximité et clubs sportifs, à Toulouse et partout en France. Audit à prix fixe de 990 €.">
+<link rel="canonical" href="https://prometheus-conseil.com/">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","name":"Prométhée Consulting","legalName":"PrometheusConseil","url":"https://prometheus-conseil.com/","image":"https://prometheus-conseil.com/img/restitution.jpg","email":"andiaye@prometheus-conseil.com","description":"Conseil en intelligence artificielle appliquée, automatisation des processus et acquisition client pour commerces de proximité, clubs sportifs, TPE et PME.","address":{"@type":"PostalAddress","streetAddress":"26 rue de la Caravelle","postalCode":"31500","addressLocality":"Toulouse","addressCountry":"FR"},"areaServed":["Toulouse","Occitanie","France"],"founder":{"@type":"Person","name":"Alioune Badara Ndiaye","jobTitle":"Président-fondateur"},"sameAs":["https://www.linkedin.com/company/prometheeconsulting/"],"makesOffer":{"@type":"Offer","name":"Audit d'automatisation à prix fixe","price":"990","priceCurrency":"EUR"}}</script>
 <meta property="og:title" content="Prométhée Consulting">
-<meta property="og:description" content="Éclairer les transformations. IA appliquée, automatisation et acquisition client pour commerces, TPE et PME.">
+<meta property="og:description" content="Plus de clients en boutique. Plus de monde en tribune. IA appliquée, automatisation et acquisition pour commerces de proximité et clubs sportifs.">
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://prometheus-conseil.com/img/restitution.jpg">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 150 205'%3E%3Cpath d='M72,8C75,36 63,58 43,83C23,108 15,132 25,157C26,130 40,112 57,90C77,64 86,39 72,8Z' fill='%230B2447'/%3E%3Cpath d='M90,22C109,56 108,75 87,102C67,128 59,148 62,169C42,152 44,131 57,109C77,79 96,61 90,22Z' fill='%238E70E5'/%3E%3Cpath d='M117,104C139,139 136,169 115,189C102,202 81,199 74,187C60,161 81,136 100,119C107,113 111,108 117,104Z' fill='%230B2447'/%3E%3Ccircle cx='117' cy='95' r='10' fill='%238E70E5'/%3E%3C/svg%3E">
@@ -143,6 +145,28 @@ p{margin:0}
 @media (max-width:980px){.tiles{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:640px){.tiles{grid-template-columns:1fr}}
 
+.method .price .deduct{color:var(--lav-clair);font-weight:700;opacity:1}
+.tag{display:inline-block;font-size:11px;font-weight:900;letter-spacing:.18em;text-transform:uppercase;background:var(--lavande);color:var(--profond);padding:4px 10px;border-radius:999px}
+.launch{border:1.5px solid var(--lavande);border-radius:18px;padding:18px 22px;display:flex;flex-direction:column;gap:8px;align-items:flex-start}
+.launch p{opacity:.9}
+.launch b{font-family:var(--serif);font-weight:400;font-size:30px;color:var(--ivoire)}
+.contact .offer{max-width:640px;border:1.5px solid var(--lavande);border-radius:999px;padding:12px 22px;font-size:15px}
+@media (max-width:640px){.contact .offer{border-radius:18px}}
+/* Deux cibles */
+.duo{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.target{border-radius:22px;overflow:hidden;display:flex;flex-direction:column;min-width:0;background:var(--ivoire);color:var(--encre)}
+.target .ph{aspect-ratio:16/9;overflow:hidden;background:var(--bleu);max-width:100%}
+.target .ph img{width:100%;height:100%;object-fit:cover}
+.target .in{padding:32px;display:flex;flex-direction:column;gap:14px}
+.target h3{font-size:clamp(30px,3.4vw,42px);line-height:1.05;color:var(--bleu)}
+.target .pain{color:var(--encre-2)}
+.target ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:8px}
+.target li{display:flex;gap:10px}
+.target li::before{content:"";flex:none;width:7px;height:7px;border-radius:50%;background:var(--lavande);margin-top:9px}
+.target .proof{margin-top:6px;padding-top:14px;border-top:1px solid var(--filet);font-size:15px;color:var(--encre-2)}
+.target .proof b{font-family:var(--serif);font-weight:400;font-size:30px;color:var(--bleu);display:block;line-height:1.1}
+.others{text-align:center;opacity:.75;font-size:15px}
+@media (max-width:860px){.duo{grid-template-columns:1fr}}
 /* Résultats */
 .nums{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;border-top:1px solid rgba(238,232,221,.14)}
 .num{padding:34px 24px 0 0;display:flex;flex-direction:column;gap:10px;min-width:0}
@@ -273,6 +297,7 @@ footer .links{display:flex;gap:18px}
     <a class="brand" href="#top" aria-label="Prométhée Consulting, haut de page"><svg aria-hidden="true"><use href="#flame"/></svg><span><b>PROMÉTHÉE</b><small>CONSULTING</small></span></a>
     <ul>
       <li><a href="#epoque">L'époque</a></li>
+      <li><a href="#pour-qui">Pour qui</a></li>
       <li><a href="#services">Services</a></li>
       <li><a href="#missions">Missions</a></li>
       <li><a href="#methode">Méthode</a></li>
@@ -293,9 +318,9 @@ footer .links{display:flex;gap:18px}
         <circle class="sp" cx="117" cy="95" r="10" fill="#EEE8DD"/>
       </svg>
     </div>
-    <div class="eyebrow load d2">Prométhée Consulting · Toulouse</div>
+    <div class="eyebrow load d2">Conseil en IA et automatisation · Toulouse</div>
     <h1 class="load d3">Éclairer les <em>transformations.</em></h1>
-    <p class="sub load d4">Intelligence artificielle appliquée, automatisation et acquisition client pour les commerces, TPE et PME qui veulent grandir sans s'alourdir.</p>
+    <p class="sub load d4"><strong style="font-weight:700;color:var(--ivoire)">Plus de clients en boutique. Plus de monde en tribune.</strong><br>IA appliquée, automatisation et acquisition client pour les commerces de proximité et les clubs sportifs.</p>
     <div class="btns load d5">
       <a class="btn btn-p" href="#contact">Demander un diagnostic →</a>
       <a class="btn btn-g" href="#epoque">Comprendre l'enjeu</a>
@@ -351,13 +376,47 @@ footer .links{display:flex;gap:18px}
     </div>
   </section>
 
+  <!-- POUR QUI -->
+  <section class="chap band" id="pour-qui" style="background:var(--profond);padding-top:0">
+    <div class="wrap" style="padding-top:0">
+      <div class="head rv">
+        <div class="eyebrow">04 / Pour qui</div>
+        <h2>Deux terrains. <em>Une même méthode.</em></h2>
+        <p class="lede">Nous accompagnons en priorité les structures où chaque client et chaque spectateur comptent.</p>
+      </div>
+      <div class="duo">
+        <article class="target rv">
+          <div class="ph"><img src="img/mise-en-place.jpg" alt="Paramétrage d'un outil de suivi client avec une équipe" width="1400" height="788" loading="lazy"></div>
+          <div class="in">
+            <span class="eyebrow" style="color:var(--lav-txt)">Commerces de proximité</span>
+            <h3>Plus de clients en boutique</h3>
+            <p class="pain">Vous dépendez du passage, la fiche Google est oubliée, les rendez-vous se prennent au téléphone et les clients ne reviennent pas toujours.</p>
+            <ul><li>Fiche Google, site et réseaux qui amènent du monde</li><li>Réservation en ligne et rappels automatiques</li><li>Fichier client et relances pour faire revenir</li></ul>
+            <p class="proof"><b>73 → 160</b>clients par semaine pour un réparateur de smartphones</p>
+          </div>
+        </article>
+        <article class="target rv">
+          <div class="ph"><img src="img/accompagnement.jpg" alt="Présentation d'un plan d'automatisation à des dirigeants" width="1400" height="788" loading="lazy"></div>
+          <div class="in">
+            <span class="eyebrow" style="color:var(--lav-txt)">Clubs sportifs</span>
+            <h3>Plus de monde en tribune</h3>
+            <p class="pain">Les bénévoles s'épuisent sur les tableurs, la billetterie est dispersée, les partenaires demandent des chiffres que personne n'a.</p>
+            <ul><li>Adhérents, matchs et plannings au même endroit</li><li>Billetterie, abonnements et boutique en ligne</li><li>Tableaux de bord pour les partenaires et le bureau</li></ul>
+            <p class="proof"><b>38 → 70&nbsp;%</b>de remplissage des matchs pour un club de basket-ball</p>
+          </div>
+        </article>
+      </div>
+      <p class="others rv">Vous dirigez une TPE ou une PME d'un autre secteur&nbsp;? La méthode s'applique aussi. <a class="link" href="#contact">Parlons-en</a>.</p>
+    </div>
+  </section>
+
   <!-- SERVICES -->
   <section class="chap band light" id="services">
     <div class="wrap">
       <div class="head rv">
-        <div class="eyebrow">04 / Services</div>
+        <div class="eyebrow">05 / Services</div>
         <h2>Ce que nous mettons <em>en place.</em></h2>
-        <p class="lede">Des outils choisis pour votre taille et paramétrés pour votre façon de vendre. Quand rien d'existant ne convient, une solution sur mesure.</p>
+        <p class="lede">Des outils choisis pour votre taille et paramétrés pour votre façon de vendre ou de remplir vos matchs. Quand rien d'existant ne convient, une solution sur mesure.</p>
       </div>
       <div class="tiles">
         <article class="tile dark rv"><span class="n">IA &amp; automatisation</span><h3>Les tâches répétitives tournent seules</h3><ul><li>Prise de rendez-vous et rappels</li><li>Réponses au service client</li><li>Relances et suivi des devis</li></ul></article>
@@ -374,7 +433,7 @@ footer .links{display:flex;gap:18px}
   <section class="chap band" id="resultats" style="background:var(--bleu)">
     <div class="wrap">
       <div class="head rv">
-        <div class="eyebrow">05 / Résultats</div>
+        <div class="eyebrow">06 / Résultats</div>
         <h2>Mesuré, <em>pas promis.</em></h2>
       </div>
       <div class="nums">
@@ -390,7 +449,7 @@ footer .links{display:flex;gap:18px}
   <section class="chap band ivoire" id="missions">
     <div class="wrap">
       <div class="head rv">
-        <div class="eyebrow">06 / Missions</div>
+        <div class="eyebrow">07 / Missions</div>
         <h2>Des contextes différents. <em>Une même exigence.</em></h2>
         <p class="lede">Comprendre comment l'organisation fonctionne vraiment, puis agir là où ça compte.</p>
       </div>
@@ -450,15 +509,16 @@ footer .links{display:flex;gap:18px}
     <div class="wrap">
       <div class="method">
         <div class="stick rv">
-          <div class="eyebrow">07 / Méthode</div>
+          <div class="eyebrow">08 / Méthode</div>
           <h2>Partir du terrain. <em>Livrer du concret.</em></h2>
           <p class="lede">Vous savez ce que vous payez et ce que vous obtenez, à chaque étape.</p>
-          <div class="price"><b>990&nbsp;€</b><span>Audit d'automatisation à prix fixe</span></div>
+          <div class="price"><b>990&nbsp;€</b><span>Audit d'automatisation à prix fixe. TVA non applicable, art. 293&nbsp;B du CGI.</span><span class="deduct">Déduit de la mise en place si vous continuez avec nous.</span></div>
+          <div class="launch"><span class="tag">Offre de lancement</span><p><b>590&nbsp;€</b> pour les 5 prochains clients qui acceptent la publication de leurs résultats et de leur avis.</p></div>
           <div class="btns" style="justify-content:flex-start;margin-top:6px"><a class="btn btn-p" href="#contact">Réserver un diagnostic →</a></div>
         </div>
         <ol class="steps">
           <li class="step rv"><div class="ph"><img src="img/diagnostic.jpg" alt="Analyse des besoins d'un dirigeant" width="1400" height="788" loading="lazy"></div><div class="t"><h3>Diagnostic</h3></div><p>30 minutes pour identifier ce qui freine votre acquisition et vos processus.</p></li>
-          <li class="step rv"><div class="ph"><img src="img/audit.jpg" alt="Entretien avec la direction pendant un audit" width="1400" height="788" loading="lazy"></div><div class="t"><h3>Audit à prix fixe</h3></div><p>Analyse de vos processus et plan d'action priorisé, sans surprise sur la facture.</p></li>
+          <li class="step rv"><div class="ph"><img src="img/audit.jpg" alt="Entretien avec la direction pendant un audit" width="1400" height="788" loading="lazy"></div><div class="t"><h3>Audit à prix fixe</h3></div><p>Analyse de vos processus, plan d'action priorisé et restitution. Prix fixe, déduit de la mise en place si vous continuez.</p></li>
           <li class="step rv"><div class="ph"><img src="img/mise-en-place.jpg" alt="Paramétrage d'un outil avec l'équipe" width="1400" height="788" loading="lazy"></div><div class="t"><h3>Mise en place</h3></div><p>Choix et paramétrage des outils, automatisations, procédures écrites.</p></li>
           <li class="step rv"><div class="ph"><img src="img/accompagnement.jpg" alt="Présentation de l'automatisation aux équipes" width="1400" height="788" loading="lazy"></div><div class="t"><h3>Accompagnement</h3></div><p>Prise en main par vos équipes et suivi des résultats dans le temps.</p></li>
         </ol>
@@ -475,7 +535,7 @@ footer .links{display:flex;gap:18px}
           <figcaption><div class="name">Alioune Badara Ndiaye</div><div class="role">Président-fondateur</div></figcaption>
         </figure>
         <div class="right">
-          <div class="eyebrow rv">08 / Le président</div>
+          <div class="eyebrow rv">09 / Le président</div>
           <p class="quote rv">« Un processus n'a de valeur que s'il produit <em>un résultat mesurable</em>. »</p>
           <div class="cols rv">
             <div><h3>Présentation</h3><p>Mon terrain d'origine, c'est le retail : je pilote la performance commerciale de magasins et je manage des équipes au quotidien.</p><p>J'y ai conçu des outils qui automatisent le reporting. J'ai vu ce qu'un processus clair change : moins de temps perdu, plus de temps pour les clients.</p></div>
@@ -502,7 +562,8 @@ footer .links{display:flex;gap:18px}
   <div class="wrap">
     <div class="flame rv" aria-hidden="true" style="width:56px;height:77px"><svg viewBox="0 0 150 205"><use href="#flame"/></svg></div>
     <h2 class="rv">Parlons de votre <em style="color:var(--lav-clair)">croissance.</em></h2>
-    <p class="lede rv">Décrivez en quelques lignes votre activité et ce qui vous freine. Écrivez « DIAGNOSTIC » pour réserver 30 minutes. Réponse sous 48 heures ouvrées.</p>
+    <p class="lede rv">Décrivez en quelques lignes votre activité et ce qui vous freine. Écrivez « DIAGNOSTIC » pour réserver 30 minutes offertes. Réponse sous 48 heures ouvrées.</p>
+    <p class="offer rv"><span class="tag">Offre de lancement</span> Audit à 590&nbsp;€ au lieu de 990&nbsp;€ pour 5 clients, en échange de la publication de vos résultats et de votre avis.</p>
     <div class="mail rv">
       <span class="val" id="email">andiaye@prometheus-conseil.com</span>
       <button class="copy" type="button" id="copy">Copier l'adresse</button>
