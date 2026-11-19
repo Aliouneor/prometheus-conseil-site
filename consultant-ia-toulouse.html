@@ -286,6 +286,15 @@ footer .links{display:flex;gap:18px}
 .nl .msg{margin:0;font-size:14px;color:var(--lav-clair);min-height:0}
 @media (max-width:520px){.nl-row{flex-direction:column}.nl-row .btn{justify-content:center}}
 
+.ck{position:fixed;left:16px;right:16px;bottom:16px;z-index:60;display:flex;justify-content:center;pointer-events:none}
+.ck-in{pointer-events:auto;max-width:720px;width:100%;background:var(--profond);color:var(--ivoire);border:1.5px solid var(--lavande);border-radius:22px;padding:22px 24px;display:flex;flex-direction:column;gap:10px;font-size:14px;line-height:1.5}
+.ck-t{margin:0;font-family:var(--serif);font-size:22px}
+.ck-in p{margin:0}
+.ck-in a{color:var(--lav-clair)}
+.ck-b{display:flex;gap:10px;flex-wrap:wrap;margin-top:4px}
+.ck-btn{flex:1;min-width:150px;justify-content:center;background:var(--lavande);color:var(--profond)}
+.ck-btn:hover{background:var(--lav-clair)}
+
 /* Pages réalisations */
 .crumb{font-size:13px;opacity:.7;display:flex;gap:8px;flex-wrap:wrap;justify-content:center}
 .crumb a{text-decoration:none}
@@ -461,7 +470,8 @@ footer .local{display:flex;gap:18px;flex-wrap:wrap}
     <details id="confidentialite">
       <summary>Confidentialité</summary>
       <div class="txt">
-        <p>La fréquentation est mesurée avec Cloudflare Web Analytics, un outil sans cookie qui ne suit pas les visiteurs d'un site à l'autre et ne collecte que des statistiques agrégées (pages vues, provenance, pays, type d'appareil). Les polices sont chargées depuis Google Fonts, ce qui transmet votre adresse IP à Google lors de l'affichage.</p>
+        <p>Cookies de mesure d'audience, déposés uniquement avec votre accord : Google Analytics 4 (Google Ireland Ltd ; cookies _ga et _ga_*, 13 mois au maximum) mesure les pages vues, la provenance et les parcours ; Microsoft Clarity (Microsoft Ireland ; cookies _clck et _clsk, 1 an au maximum) produit des cartes de clics et des enregistrements anonymisés de navigation, sans capture des champs de saisie. Votre choix est conservé 13 mois s'il est positif, 6 mois s'il est négatif, et vous pouvez le modifier à tout moment via le lien « Gérer les cookies » en bas de page. Ces données peuvent être transférées aux États-Unis dans le cadre du Data Privacy Framework.</p>
+        <p>Indépendamment de votre choix, la fréquentation est aussi mesurée avec Cloudflare Web Analytics, un outil sans cookie qui ne suit pas les visiteurs d'un site à l'autre et ne collecte que des statistiques agrégées (pages vues, provenance, pays, type d'appareil). Les polices sont chargées depuis Google Fonts, ce qui transmet votre adresse IP à Google lors de l'affichage.</p>
         <p>Formulaire d'inscription : votre adresse e-mail est transmise à Brevo (Sendinblue SAS, France), notre outil d'e-mailing, uniquement pour vous envoyer nos conseils. Vous pouvez vous désinscrire à tout moment via le lien présent dans chaque e-mail.</p>
         <p>Chat en ligne : le widget Brevo Conversations enregistre un identifiant technique dans votre navigateur (stockage local) afin de conserver l'historique de votre conversation. Les messages que vous y saisissez sont traités par Brevo et servent uniquement à vous répondre.</p>
         <p>Si vous nous écrivez par e-mail, votre message et vos coordonnées servent uniquement à vous répondre et à préparer une éventuelle mission. Ils sont conservés au maximum 3 ans après le dernier échange.</p>
@@ -474,7 +484,7 @@ footer .local{display:flex;gap:18px;flex-wrap:wrap}
 <footer class="band" style="background:var(--profond)">
   <div class="wrap">
     <span>© 2026 Prométhée Consulting · Toulouse</span>
-    <span class="links"><a href="consultant-ia-toulouse.html">Consultant IA Toulouse</a><a href="consultant-ia-dakar.html">Consultant IA Dakar</a><a href="#mentions-legales" data-open>Mentions légales</a><a href="#confidentialite" data-open>Confidentialité</a></span>
+    <span class="links"><a href="consultant-ia-toulouse.html">Consultant IA Toulouse</a><a href="consultant-ia-dakar.html">Consultant IA Dakar</a><a href="#mentions-legales" data-open>Mentions légales</a><a href="#confidentialite" data-open>Confidentialité</a><a href="#cookies" data-ck-open>Gérer les cookies</a></span>
     <em>Éclairer aujourd'hui. Transformer demain.</em>
   </div>
 </footer>
@@ -583,6 +593,27 @@ fetch(f.action+'?isAjax=1',{method:'POST',body:new FormData(f)}).then(function(r
 if(d&&d.success){m.textContent='Merci ! Vérifiez votre boîte mail pour confirmer votre inscription.';f.reset()}else{m.textContent=(d&&d.errors&&d.errors.message)||'Adresse refusée. Vérifiez-la et réessayez.'}
 }).catch(function(){f.removeAttribute('onsubmit');m.textContent='Ouverture du formulaire…';f.submit()}).finally(function(){b.disabled=false})});})();
 </script>
+<div class="ck" id="ck" role="dialog" aria-modal="false" aria-labelledby="ck-t" hidden>
+  <div class="ck-in">
+    <p class="ck-t" id="ck-t">Mesure d'audience</p>
+    <p>Avec votre accord, nous utilisons Google Analytics et Microsoft Clarity pour comprendre comment le site est consulté (pages vues, parcours, zones cliquées) et l'améliorer. Ces outils déposent des cookies pendant 13 mois au maximum. Refuser n'a aucune conséquence sur votre navigation. <a href="#confidentialite" data-open>En savoir plus</a></p>
+    <div class="ck-b"><button type="button" class="btn ck-btn" data-ck="denied">Tout refuser</button><button type="button" class="btn ck-btn" data-ck="granted">Tout accepter</button></div>
+  </div>
+</div>
+<script>(function(){var GA='G-BMQX2MTFV6',CL='',K='pc-consent',M=864e5;
+function get(){try{var c=JSON.parse(localStorage.getItem(K));if(!c)return null;var max=c.v==='granted'?395:182;return(Date.now()-c.t<max*M)?c:null}catch(e){return null}}
+function set(v){try{localStorage.setItem(K,JSON.stringify({v:v,t:Date.now()}))}catch(e){}}
+window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}window.gtag=gtag;
+gtag('consent','default',{ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',analytics_storage:'denied'});
+var loaded=false;function load(){if(loaded)return;loaded=true;
+if(GA){var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id='+GA;document.head.appendChild(s);gtag('js',new Date());gtag('config',GA,{anonymize_ip:true})}
+if(CL){(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src='https://www.clarity.ms/tag/'+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y)})(window,document,'clarity','script',CL);window.clarity('consent')}}
+function clearCk(){document.cookie.split(';').forEach(function(x){var n=x.split('=')[0].trim();if(/^(_ga|_gid|_gat|_clck|_clsk|CLID|MUID)/.test(n)){['',';domain=.prometheus-conseil.com',';domain=prometheus-conseil.com'].forEach(function(d){document.cookie=n+'=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/'+d})}})}
+function apply(v){if(v==='granted'){gtag('consent','update',{analytics_storage:'granted'});load()}else{gtag('consent','update',{analytics_storage:'denied'});if(window.clarity)window.clarity('consent',false);clearCk()}}
+var box=document.getElementById('ck');function show(){box.hidden=false}function hide(){box.hidden=true}
+box.querySelectorAll('[data-ck]').forEach(function(b){b.addEventListener('click',function(){var v=b.getAttribute('data-ck');var prev=get();set(v);apply(v);hide();if(prev&&prev.v==='granted'&&v==='denied')location.reload()})});
+document.querySelectorAll('[data-ck-open]').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();show()})});
+box.querySelector('[data-open]').addEventListener('click',function(){var d=document.getElementById('confidentialite');if(d)d.open=true});var c=get();if(c){apply(c.v)}else{show()}})();</script>
 <!-- Brevo Conversations --><script>(function(d,w,c){w.BrevoConversationsID='6aec6ead6cfe2af5db09006e';w[c]=w[c]||function(){(w[c].q=w[c].q||[]).push(arguments)};var s=d.createElement('script');s.async=true;s.src='https://conversations-widget.brevo.com/brevo-conversations.js';if(d.head)d.head.appendChild(s)})(document,window,'BrevoConversations');</script>
 <!-- Cloudflare Web Analytics --><script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "40f00ac05ec7421dbff4886e65e59285"}'></script>
 </body>
