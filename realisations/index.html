@@ -276,6 +276,16 @@ footer .links{display:flex;gap:18px}
   .js .lit .w{color:var(--ivoire)}
 }
 
+.nl{width:100%;max-width:560px;display:flex;flex-direction:column;gap:10px;text-align:left;position:relative}
+.nl label{font-size:14px;font-weight:700;opacity:.85}
+.nl-row{display:flex;gap:10px}
+.nl input[type=email]{flex:1;min-width:0;font:inherit;font-size:16px;padding:14px 18px;border-radius:999px;border:1.5px solid rgba(238,232,221,.3);background:transparent;color:var(--ivoire)}
+.nl input[type=email]:focus{outline:none;border-color:var(--lavande)}
+.nl input::placeholder{color:rgba(238,232,221,.5)}
+.nl small{font-size:12px;opacity:.6}
+.nl .msg{margin:0;font-size:14px;color:var(--lav-clair);min-height:0}
+@media (max-width:520px){.nl-row{flex-direction:column}.nl-row .btn{justify-content:center}}
+
 /* Pages réalisations */
 .crumb{font-size:13px;opacity:.7;display:flex;gap:8px;flex-wrap:wrap;justify-content:center}
 .crumb a{text-decoration:none}
@@ -415,6 +425,12 @@ footer .local{display:flex;gap:18px;flex-wrap:wrap}
     <p class="lede rv">Réservez directement 30 minutes offertes en visio, ou décrivez par e-mail votre activité et ce qui vous freine. Réponse sous 48 heures ouvrées.</p>
     <p class="offer rv"><span class="tag">Offre de lancement</span> Audit à 590&nbsp;€ au lieu de 990&nbsp;€ pour 5 clients, en échange de la publication de vos résultats et de votre avis.</p>
     <div class="btns rv"><a class="btn btn-p" href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ3iQtA3kPyD_g8nWoRbdabD0t45EtHA2CLUmC6xBCfZzQUXudzoZgHo7xBk4VdVMlCnAyc6OCZ6" target="_blank" rel="noopener">Réserver 30 min offertes →</a></div>
+    <form class="nl rv" id="nl" action="https://c0b3ad13.sibforms.com/serve/MUIFALAREF_ZhVrawpmTin7-dTVjPs660GQ0I8lnNb-f4N-CNZHlXI-LwTqWJs9SpSI7EXJ31MNp_OSWjeRkIkOxEoItiPXF-98XLmM0RMnkeFU6qQehkMTNcKkqIeHirVgAO_pw4j_7jlSSX8xgoWuVO0q1SlG43xWcHu_Aobh-SW6nDg5oMRzpVxtamxcv7LgJhBuDUqjAvJnFQA==" method="post" target="_blank">
+      <label for="nl-email">Recevoir nos conseils IA et automatisation (1 e-mail par mois maximum)</label>
+      <div class="nl-row"><input id="nl-email" name="EMAIL" type="email" required autocomplete="email" placeholder="votre@email.fr"><input type="text" name="email_address_check" value="" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px"><input type="hidden" name="locale" value="fr"><button class="btn btn-p" type="submit">S'inscrire</button></div>
+      <p class="msg" id="nl-msg" role="status" aria-live="polite"></p>
+      <small>Désinscription en un clic dans chaque e-mail. Voir la politique de confidentialité.</small>
+    </form>
     <div class="mail rv">
       <span class="val" id="email">andiaye@prometheus-conseil.com</span>
       <button class="copy" type="button" id="copy">Copier l'adresse</button>
@@ -424,7 +440,7 @@ footer .local{display:flex;gap:18px;flex-wrap:wrap}
       <a class="link" href="https://www.linkedin.com/company/prometheeconsulting/" target="_blank" rel="noopener">Page LinkedIn</a>
       <a class="link" href="https://www.linkedin.com/in/alioune-badara-ndiaye-1389082a1/" target="_blank" rel="noopener">Profil d'Alioune Badara Ndiaye</a>
     </div>
-    <p class="note">Basé à Toulouse. Missions en France et au Sénégal, sur site ou à distance.</p>
+    <p class="note">Basé à Toulouse. Sur site en Occitanie, à distance partout en France et au Sénégal.</p>
   </div>
 </section>
 
@@ -442,7 +458,9 @@ footer .local{display:flex;gap:18px;flex-wrap:wrap}
     <details id="confidentialite">
       <summary>Confidentialité</summary>
       <div class="txt">
-        <p>Ce site ne dépose aucun cookie et ne contient aucun formulaire. La fréquentation est mesurée avec Cloudflare Web Analytics, un outil sans cookie qui ne suit pas les visiteurs d'un site à l'autre et ne collecte que des statistiques agrégées (pages vues, provenance, pays, type d'appareil). Les polices sont chargées depuis Google Fonts, ce qui transmet votre adresse IP à Google lors de l'affichage.</p>
+        <p>La fréquentation est mesurée avec Cloudflare Web Analytics, un outil sans cookie qui ne suit pas les visiteurs d'un site à l'autre et ne collecte que des statistiques agrégées (pages vues, provenance, pays, type d'appareil). Les polices sont chargées depuis Google Fonts, ce qui transmet votre adresse IP à Google lors de l'affichage.</p>
+        <p>Formulaire d'inscription : votre adresse e-mail est transmise à Brevo (Sendinblue SAS, France), notre outil d'e-mailing, uniquement pour vous envoyer nos conseils. Vous pouvez vous désinscrire à tout moment via le lien présent dans chaque e-mail.</p>
+        <p>Chat en ligne : le widget Brevo Conversations enregistre un identifiant technique dans votre navigateur (stockage local) afin de conserver l'historique de votre conversation. Les messages que vous y saisissez sont traités par Brevo et servent uniquement à vous répondre.</p>
         <p>Si vous nous écrivez par e-mail, votre message et vos coordonnées servent uniquement à vous répondre et à préparer une éventuelle mission. Ils sont conservés au maximum 3 ans après le dernier échange.</p>
         <p>Conformément au RGPD, vous pouvez demander l'accès, la rectification ou la suppression de vos données à andiaye@prometheus-conseil.com. Vous pouvez aussi saisir la CNIL (cnil.fr).</p>
       </div>
@@ -555,7 +573,14 @@ footer .local{display:flex;gap:18px;flex-wrap:wrap}
     try { if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(text).then(done, fallback); else fallback(); } catch (e) { fallback(); }
   });
 })();
+
+(function(){var f=document.getElementById('nl');if(!f||!window.fetch)return;var m=document.getElementById('nl-msg');
+f.addEventListener('submit',function(e){e.preventDefault();var b=f.querySelector('button');b.disabled=true;m.textContent='Envoi…';
+fetch(f.action+'?isAjax=1',{method:'POST',body:new FormData(f)}).then(function(r){return r.json()}).then(function(d){
+if(d&&d.success){m.textContent='Merci ! Vérifiez votre boîte mail pour confirmer votre inscription.';f.reset()}else{m.textContent=(d&&d.errors&&d.errors.message)||'Adresse refusée. Vérifiez-la et réessayez.'}
+}).catch(function(){f.removeAttribute('onsubmit');m.textContent='Ouverture du formulaire…';f.submit()}).finally(function(){b.disabled=false})});})();
 </script>
+<!-- Brevo Conversations --><script>(function(d,w,c){w.BrevoConversationsID='6aec6ead6cfe2af5db09006e';w[c]=w[c]||function(){(w[c].q=w[c].q||[]).push(arguments)};var s=d.createElement('script');s.async=true;s.src='https://conversations-widget.brevo.com/brevo-conversations.js';if(d.head)d.head.appendChild(s)})(document,window,'BrevoConversations');</script>
 <!-- Cloudflare Web Analytics --><script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "40f00ac05ec7421dbff4886e65e59285"}'></script>
 </body>
 </html>
