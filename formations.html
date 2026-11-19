@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Conférences et formations IA | Prométhée Consulting</title>
+<title>Formation IA en entreprise : skills, IA locale, agents | Prométhée Consulting</title>
 <meta name="description" content="Conférences et formations en ligne sur l'IA au travail : utiliser l'IA en tant qu'employé, choisir ses skills et ses modèles, IA en local, créer plusieurs agents.">
-<meta property="og:title" content="Conférences et formations IA | Prométhée Consulting">
+<meta property="og:title" content="Formation IA en entreprise : skills, IA locale, agents | Prométhée Consulting">
 <meta property="og:description" content="Conférences et formations en ligne sur l'IA au travail : utiliser l'IA en tant qu'employé, choisir ses skills et ses modèles, IA en local, créer plusieurs agents.">
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://prometheus-conseil.com/img/restitution.jpg">
@@ -336,6 +336,26 @@ footer .links{display:flex;gap:18px}
 .keyfig b{font-family:var(--serif);font-weight:400;font-size:clamp(46px,5.6vw,76px);line-height:1;font-variant-numeric:tabular-nums}
 .keyfig span{font-size:15px;opacity:.8}
 @media (max-width:900px){.keyfig{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:28px}}
+
+.faq{display:flex;flex-direction:column;border-top:1px solid var(--filet)}
+.qa{border-bottom:1px solid var(--filet)}
+.qa summary{cursor:pointer;list-style:none;padding:22px 40px 22px 0;font-family:var(--serif);font-size:clamp(20px,2.2vw,26px);color:var(--bleu);position:relative}
+.qa summary::-webkit-details-marker{display:none}
+.qa summary::after{content:"+";position:absolute;right:4px;top:18px;font-family:var(--sans);font-size:26px;color:var(--lav-txt);transition:transform .3s}
+.qa[open] summary::after{transform:rotate(45deg)}
+.qa p{color:var(--encre-2);max-width:760px;padding-bottom:22px}
+.hero h1.eyebrow{font-family:var(--sans);font-weight:700;font-size:12px;letter-spacing:.22em;line-height:1.5;max-width:none;color:var(--lav-clair)}
+.hero .display{font-family:var(--serif);font-weight:400;font-size:clamp(46px,9vw,124px);line-height:.98;letter-spacing:-.01em;max-width:11ch;position:relative;margin:0;text-wrap:balance}
+.hero .display em{font-style:italic;color:var(--lav-clair)}
+footer .local{display:flex;gap:18px;flex-wrap:wrap}
+.areas{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.areas article{background:var(--ivoire);border-radius:22px;padding:30px;display:flex;flex-direction:column;gap:10px;min-width:0}
+.areas h3{font-size:26px;color:var(--bleu);line-height:1.15}
+.areas p{color:var(--encre-2)}
+@media (max-width:900px){.areas{grid-template-columns:1fr}}
+.ivoire .areas article{background:var(--blanc)}
+.work.two{grid-template-columns:repeat(2,minmax(0,1fr))}
+@media (max-width:980px){.work.two{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -389,8 +409,9 @@ footer .links{display:flex;gap:18px}
   <div class="wrap">
     <div class="flame rv" aria-hidden="true" style="width:56px;height:77px"><svg viewBox="0 0 150 205"><use href="#flame"/></svg></div>
     <h2 class="rv">Parlons de votre <em style="color:var(--lav-clair)">croissance.</em></h2>
-    <p class="lede rv">Décrivez en quelques lignes votre activité et ce qui vous freine. Écrivez « DIAGNOSTIC » pour réserver 30 minutes offertes. Réponse sous 48 heures ouvrées.</p>
+    <p class="lede rv">Réservez directement 30 minutes offertes en visio, ou décrivez par e-mail votre activité et ce qui vous freine. Réponse sous 48 heures ouvrées.</p>
     <p class="offer rv"><span class="tag">Offre de lancement</span> Audit à 590&nbsp;€ au lieu de 990&nbsp;€ pour 5 clients, en échange de la publication de vos résultats et de votre avis.</p>
+    <div class="btns rv"><a class="btn btn-p" href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ3iQtA3kPyD_g8nWoRbdabD0t45EtHA2CLUmC6xBCfZzQUXudzoZgHo7xBk4VdVMlCnAyc6OCZ6" target="_blank" rel="noopener">Réserver 30 min offertes →</a></div>
     <div class="mail rv">
       <span class="val" id="email">andiaye@prometheus-conseil.com</span>
       <button class="copy" type="button" id="copy">Copier l'adresse</button>
@@ -429,7 +450,7 @@ footer .links{display:flex;gap:18px}
 <footer class="band" style="background:var(--profond)">
   <div class="wrap">
     <span>© 2026 Prométhée Consulting · Toulouse</span>
-    <span class="links"><a href="#mentions-legales" data-open>Mentions légales</a><a href="#confidentialite" data-open>Confidentialité</a></span>
+    <span class="links"><a href="consultant-ia-toulouse.html">Consultant IA Toulouse</a><a href="consultant-ia-dakar.html">Consultant IA Dakar</a><a href="#mentions-legales" data-open>Mentions légales</a><a href="#confidentialite" data-open>Confidentialité</a></span>
     <em>Éclairer aujourd'hui. Transformer demain.</em>
   </div>
 </footer>
